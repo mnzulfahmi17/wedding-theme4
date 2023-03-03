@@ -1,0 +1,222 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply antialiased;
+  }
+  h1 {
+    @apply font-poppins tracking-widest w-full text-white;
+  }
+  h2 {
+    @apply font-rochester font-bold text-2xl text-center text-customBrown lg:text-5xl;
+  }
+  h3 {
+    @apply font-rochester font-semibold text-4xl text-customBrown;
+  }
+  h4 {
+    @apply font-poppins text-xs tracking-widest text-center text-white lg:text-lg;
+  }
+  h5 {
+    @apply font-poppins text-sm text-white lg:text-xl;
+  }
+  h6 {
+    @apply font-poppins text-base text-customBrown;
+  }
+}
+
+.text-content {
+  @apply font-poppins text-xs text-center text-customDarkGrey;
+}
+
+.text-protokol {
+  @apply font-poppins text-xs text-center lg:text-sm;
+}
+
+@layer components {
+  .timeline-container {
+    @apply relative pt-2 xs:pt-0 lg:w-1/2 md:ml-auto lg:pl-24;
+  }
+  .timeline-container-left {
+    @apply md:ml-0 md:mr-auto md:pl-0 md:pr-16 lg:pr-24;
+  }
+  .flower-left {
+    @apply hidden absolute mx-auto left-0 right-12 lg:block;
+  }
+
+  .flower-right {
+    @apply hidden absolute mx-auto left-12 right-0 lg:block;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #f59d9d;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+#hero {
+  background-image: url("https://wedding.invie.my.id/assets/vendors/theme-three/img/decoration/header-opening-bottom.png"),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%),
+    url("../images/prewed/prewed1.jpeg");
+  background-repeat: no-repeat;
+  background-size: 100% 100px, cover, cover;
+  background-position: center calc(100% + 2rem), center, center;
+}
+
+#event {
+  background-image: url("https://wedding.invie.my.id/assets/vendors/theme-three/img/decoration/header-opening-top.png"),
+    url("https://wedding.invie.my.id/assets/vendors/theme-three/img/decoration/header-opening-bottom.png"),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.7) 100%),
+    url("../images/prewed/prewed2.jpeg");
+  padding: 4rem 0;
+  background-size: 100% 100px, 100% 100px, cover, cover;
+  background-repeat: no-repeat;
+  background-position: center calc(0% - 2rem), center calc(100% + 3rem), center;
+  min-height: 30rem;
+}
+#gift {
+  background-image: url("https://wedding.invie.my.id/assets/vendors/theme-three/img/decoration/header-opening-top.png"),
+    url("https://wedding.invie.my.id/assets/vendors/theme-three/img/decoration/header-opening-bottom.png"),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.7) 100%),
+    url("../images/prewed/prewed2.jpeg");
+  background-repeat: no-repeat;
+  background-size: 100% 100px, 100% 100px, cover, cover;
+  background-position: center calc(0% - 1rem), center calc(100% + 2rem), center;
+}
+.circle-decoration {
+  background-image: url("https://wedding.invie.my.id/assets/vendors/theme-three/img/decoration/text-dec-section-2.png");
+}
+.btn-custom {
+  @apply font-poppins font-semibold text-sm text-white py-4 px-8 rounded-md bg-customGreen hover:bg-customGreen/30 lg:text-base;
+}
+.hamburger {
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  transition: all 0.25s;
+  position: relative;
+}
+.hamburger-top,
+.hamburger-middle,
+.hamburger-bottom {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 3px;
+  top: 0;
+  left: 0;
+  background: white;
+  transform: rotate(0);
+  transition: all 0.5s;
+}
+.hamburger-middle {
+  transform: translateY(7px);
+}
+.hamburger-bottom {
+  transform: translateY(14px);
+  background: white;
+}
+.open {
+  transform: rotate(90deg);
+  transform: translateY(0px);
+  position: fixed;
+  right: 25px;
+}
+.open .hamburger-top {
+  transform: rotate(45deg) translateY(6px) translateX(6px);
+  background-color: #fff;
+}
+.open .hamburger-middle {
+  display: none;
+}
+.open .hamburger-bottom {
+  transform: rotate(-45deg) translateY(6px) translateX(-6px);
+  background-color: #fff;
+}
+.card-left {
+  background-image: url("https://wedding.invie.my.id/assets/vendors/theme-three/img/decoration/card-decoration-section-3-1.svg");
+  background-repeat: no-repeat;
+  background-position-x: left;
+  background-size: 50px;
+  background-position-y: bottom;
+}
+.card {
+  background-image: url("https://wedding.invie.my.id/assets/vendors/theme-three/img/decoration/card-decoration-section-3-2.svg");
+  background-repeat: no-repeat;
+  background-position-x: right;
+  background-size: 50px;
+  background-position-y: bottom;
+}
+.card-gift {
+  background-color: white;
+  background-image: url("../images/gift.png");
+  background-repeat: no-repeat;
+  background-position-x: right;
+  background-size: 100px;
+  background-position-y: 115px;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 5px;
+}
+.img-profile-left {
+  @apply relative z-10 flex before:absolute before:h-64 before:w-64 before:-z-10 before:border before:border-customDarkGrey after:absolute after:h-64 after:w-64 after:-z-10 after:border after:border-customDarkGrey after:rotate-6;
+}
+.img-profile-right {
+  @apply relative z-10 flex before:absolute before:h-64 before:w-64 before:-z-10 before:border before:border-customDarkGrey after:absolute after:h-64 after:w-64 after:-z-10 after:border after:border-customDarkGrey after:-rotate-6;
+}
+.circle-decoration {
+  @apply flex justify-center items-center bg-no-repeat bg-cover bg-center w-44 h-44 lg:w-48 lg:h-48;
+}
+.carousel {
+  position: relative;
+}
+
+.carousel__item {
+  display: none;
+}
+
+.carousel__item--selected {
+  display: block;
+}
+
+.carousel__nav {
+  width: 100%;
+  padding: 20px 0;
+  position: absolute;
+  bottom: -100px;
+  left: 0;
+  text-align: center;
+}
+
+.carousel__button {
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  background: lightgray;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.carousel__button--selected {
+  border: 1px solid black;
+  background: none;
+}
+
+@media only screen and (min-width: 1024px) {
+  .card-left {
+    background-image: none;
+  }
+  .card {
+    background-image: none;
+  }
+}

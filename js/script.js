@@ -1,3 +1,22 @@
+// Scroll
+
+window.addEventListener("scroll", reveal);
+
+function reveal() {
+  var reveals = document.querySelectorAll(".reveal");
+
+  for (var i = 0; i < reveals.length; i++) {
+    var windowheight = window.innerHeight;
+    var revealtop = reveals[i].getBoundingClientRect().top;
+    // var revealpoint = 150;
+    if (revealtop < windowheight) {
+      reveals[i].classList.add("active");
+    } else {
+      reveals[i].classList.remove("active");
+    }
+  }
+}
+
 // Hamburger Button
 const btnHamburger = document.getElementById("menu-btn");
 
@@ -11,7 +30,7 @@ function navToggle() {
   menu.classList.toggle("hidden");
 }
 
-// Carousel
+// // Carousel
 document.querySelectorAll(".carousel").forEach((carousel) => {
   const items = carousel.querySelectorAll(".carousel__item");
   const buttonsHtml = Array.from(items, () => {
@@ -49,33 +68,14 @@ document.querySelectorAll(".carousel").forEach((carousel) => {
   buttons[0].classList.add("carousel__button--selected");
 });
 
-// Scroll Trigger Navbar
-var x = window.matchMedia("(max-width: 768px)");
-x.addListener(scrollFunction); // Attach listener function on state changes
-window.onscroll = function () {
-  scrollFunction(x);
-};
-
-function scrollFunction(x) {
-  if (
-    document.body.scrollTop > 80 ||
-    document.documentElement.scrollTop > 80 ||
-    x.matches
-  ) {
-    document.getElementById("navbar").style.opacity = "1";
-    document.getElementById("navbar").style.background = "";
-    document.getElementById("navbar").style.transition = "0.5s";
-  } else {
-    document.getElementById("navbar").style.background = "transparent";
-    document.getElementById("navbar").style.transition = "0.5s";
-  }
-}
-
+// Open Page
 const overlay = document.getElementById("overlay");
 const bodyInvitation = document.getElementById("body-invitation");
-const btn = document.getElementById("open-invitation");
-btn.addEventListener("click", function () {
+const btnOpen = document.getElementById("open-invitation");
+btnOpen.addEventListener("click", openPage);
+
+function openPage() {
   overlay.classList.add("animate-openInvitation");
   bodyInvitation.classList.remove("hidden");
-  btn.remove();
-});
+  btnOpen.remove();
+}

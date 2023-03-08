@@ -8,53 +8,110 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Rochester&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Rochester&display=swap"
       rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
     />
     <!-- CSS -->
     <link href="./css/style.css" rel="stylesheet" />
     <!-- JS -->
     <script src="js/script.js" defer></script>
-    <title>Wedding Project 3</title>
+    <title>Wedding Project 4</title>
   </head>
 
   <body>
     <!-- <div
       id="overlay"
-      class="hidden z-10 -mt-10 absolute bg-cover bg-no-repeat bg-center h-[110vh] w-full"
+      class="z-30 absolute bg-cover bg-no-repeat bg-center h-screen w-full"
       style="
-        background-image: url('https://wedding.invie.my.id/assets/img/prewed/prewed6.jpeg');
+        background-image: linear-gradient(
+            180deg,
+            rgba(18, 38, 23, 0.7) 0%,
+            rgba(18, 38, 23, 0.7) 100%
+          ),
+          url('https://wedding.invie.my.id/assets/vendors/theme-four/img/bg/header.jpg');
       "
     >
       <div
-        class="h-full bg-black/60 flex justify-center items-center flex-col text-white"
+        class="h-full -mt-10 z-20 flex justify-center items-center space-y-8 px-5 flex-col text-white"
       >
+        <div
+          id="typing-container"
+          class="flex animate-[wiggle_1s_ease-in-out_infinite]"
+        >
+          <h1>Farrel & Fitri</h1>
+        </div>
         <img
-          src="https://wedding.invie.my.id/assets/img/icons/wedding_ring.png"
+          src="https://wedding.invie.my.id/assets/vendors/theme-four/img/decoration/foliage-horizontal-2.svg"
           alt="invie_logo"
-          class="w-[70px]"
+          class="w-60"
         />
-        <p class="py-6">The Wedding of</p>
-        <h2 class="font-sacramento text-6xl">Farrel & Fitri</h2>
-        <p class="pt-5">Kepada Yth.</p>
-        <p class="pb-5">Bapak/Ibu/Saudara/i</p>
-        <p class="text-2xl border-b-2 pb-2 px-6">Tamu Undangan</p>
-        <p class="text-xs mt-6">
+        <p class="text-content2 text-center font-semibold">
+          Kepada Yth. Tamu Undangan
+        </p>
+        <p class="text-content2 text-center">
+          Kami mengundang Bapak/Ibu/Saudara/i di acara pernikahan kami pada :
+          <br />
+          Minggu, 26 Februari 2023
+        </p>
+        <p class="text-content2 text-center italic">
           *Mohon maaf bila ada kesalahan penulisan nama dan gelar
         </p>
-        <button
-          id="open-invitation"
-          class="bg-customPink hover:bg-customPink/75 text-white font-bold py-2 mt-10 px-4 rounded-full"
-        >
-          <i class="fa-solid fa-book-open mr-1"></i>
-          Buka Undangan
-        </button>
+        <button id="open-invitation" class="btn-custom2">Buka Undangan</button>
       </div>
     </div> -->
 
-    <div id="body-invitation">
+    <div id="overlay" class="relative z-50">
+      <img
+        src="https://wedding.invie.my.id/assets/vendors/theme-four/img/bg/header.jpg"
+        alt=""
+        style="
+          position: absolute;
+          height: 100vh;
+          width: 100%;
+          object-fit: cover;
+        "
+      />
+      <div class="absolute h-screen w-full bg-opacity-70 bg-customDarkGreen2">
+        <div
+          class="-mt-10 z-20 flex flex-col justify-center items-center h-screen text-white space-y-5"
+        >
+          <h1 class="font-rochester font-medium text-5xl text-white lg:text-7xl">Farrel & Fitri</h1>
+          <img
+            src="https://wedding.invie.my.id/assets/vendors/theme-four/img/decoration/foliage-horizontal-2.svg"
+            alt="invie_logo"
+            class="w-60"
+          />
+          <hr />
+          <p class="text-content2 text-center font-semibold">
+            Kepada Yth. Tamu Undangan
+          </p>
+          <p class="text-content2 text-center">
+            Kami mengundang Bapak/Ibu/Saudara/i di acara pernikahan kami pada :
+            <br />
+            Minggu, 26 Februari 2023
+          </p>
+          <p class="text-content2 text-center italic">
+            *Mohon maaf bila ada kesalahan penulisan nama dan gelar
+          </p>
+          <button id="open-invitation" class="btn-custom2">
+            Buka Undangan
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="body-invitation" class="hidden">
       <!-- NAVBAR -->
-      <nav id="navbar" class="fixed z-20 p-6 w-full top-0 bg-customGreen">
+      <nav class="fixed z-10 p-6 w-full top-0 bg-customDarkGreen">
+        <!-- Flex -->
         <div
           class="flex items-center justify-between font-semibold text-white md:justify-center"
         >
@@ -76,355 +133,408 @@
           <!-- Mobile Menu -->
           <div
             id="menu"
-            class="absolute hidden p-6 rounded-lg bg-customGreen left-0 right-0 top-14 z-100"
+            class="absolute hidden p-6 bg-customDarkGreen left-0 right-0 top-14 z-100"
           >
             <div
               class="flex flex-col items-start space-y-4 text-white rounded-sm"
             >
               <div class="group">
-                <a href="#partner">Mempelai</a>
-                <div
-                  class="mx-2 group-hover:border-b group-hover:border-blue-50"
-                ></div>
+                <a href="#bride">Mempelai</a>
+                <div class="border-navbar"></div>
               </div>
               <div class="group">
-                <a href="#event">Undangan</a>
-                <div
-                  class="mx-2 group-hover:border-b group-hover:border-blue-50"
-                ></div>
+                <a href="#invitation">Undangan</a>
+                <div class="border-navbar"></div>
               </div>
               <div class="group">
-                <a href="#story-card">Cerita kami</a>
-                <div
-                  class="mx-2 group-hover:border-b group-hover:border-blue-50"
-                ></div>
+                <a href="#story">Story</a>
+                <div class="border-navbar"></div>
               </div>
               <div class="group">
                 <a href="#gallery">Galeri</a>
-                <div
-                  class="mx-2 group-hover:border-b group-hover:border-blue-50"
-                ></div>
+                <div class="border-navbar"></div>
               </div>
               <div class="group">
-                <a href="#friend-wishes">Kirim doa dan ucapan</a>
-                <div
-                  class="mx-2 group-hover:border-b group-hover:border-blue-50"
-                ></div>
+                <a href="#rsvp">RSVP</a>
+                <div class="border-navbar"></div>
+              </div>
+              <div class="group">
+                <a href="#wish">Wish</a>
+                <div class="border-navbar"></div>
               </div>
             </div>
           </div>
           <!-- Menu -->
           <div
-            class="hidden font-poppins h-8 md:flex md:items-center md:space-x-10"
+            class="hidden font-poppins h-16 md:flex md:flex-row md:items-center md:justify-between md:w-full md:space-x-8"
           >
-            <div class="group">
-              <a href="#">Mempelai</a>
-              <div
-                class="mx-2 group-hover:border-b group-hover:border-white"
-              ></div>
+            <div
+              class="flex flex-row justify-end items-center space-x-8 w-full"
+            >
+              <div class="group">
+                <a href="#bride" class="text-menu">Mempelai</a>
+                <div class="border-navbar"></div>
+              </div>
+              <div class="group">
+                <a href="#invitation" class="text-menu">Undangan</a>
+                <div class="border-navbar"></div>
+              </div>
+              <div class="group">
+                <a href="#story" class="text-menu">Story</a>
+                <div class="border-navbar"></div>
+              </div>
             </div>
-            <div class="group">
-              <a href="#">Undangan</a>
-              <div
-                class="mx-2 group-hover:border-b group-hover:border-white"
-              ></div>
-            </div>
-            <div class="group">
-              <a href="#">Cerita kami</a>
-              <div
-                class="mx-2 group-hover:border-b group-hover:border-white"
-              ></div>
-            </div>
-            <div class="group">
-              <a href="#">Galeri</a>
-              <div
-                class="mx-2 group-hover:border-b group-hover:border-white"
-              ></div>
-            </div>
-            <div class="group">
-              <a href="#" class="font-poppins font-semibold text-sm text-white"
-                >Kirim doa dan ucapan</a
+            <!-- Logo -->
+            <div class="relative">
+              <img
+                src="https://wedding.invie.my.id/assets/vendors/theme-four/img/decoration/text-dec-spouse.svg"
+                alt=""
+              />
+              <a
+                href="#"
+                class="font-rochester font-bold text-2xl text-white absolute top-1/2 left-1/2 text-center -translate-x-1/2 -translate-y-1/2"
+                >F&F</a
               >
-              <div
-                class="mx-2 group-hover:border-b group-hover:border-white"
-              ></div>
+            </div>
+            <div
+              class="flex flex-row justify-start items-center space-x-8 w-full"
+            >
+              <div class="group">
+                <a href="#gallery" class="text-menu">Galeri</a>
+                <div class="border-navbar"></div>
+              </div>
+              <div class="group">
+                <a href="#rsvp" class="text-menu">RSVP</a>
+                <div class="border-navbar"></div>
+              </div>
+              <div class="group">
+                <a href="#wish" class="text-menu">Wish</a>
+                <div class="border-navbar"></div>
+              </div>
             </div>
           </div>
         </div>
       </nav>
       <!-- HERO SECTION  -->
-      <section id="hero" class="h-screen">
-        <!-- Container -->
-        <div class="container mx-auto py-36 px-5">
-          <!-- Header -->
-          <!-- Flex -->
-          <div
-            class="flex flex-col justify-center items-center space-y-4 lg:space-y-8"
-          >
-            <!-- Text & Line -->
+      <section id="hero">
+        <img
+          src="https://wedding.invie.my.id/assets/vendors/theme-four/img/bg/header.jpg"
+          alt=""
+          style="
+            position: absolute;
+            height: 100vh;
+            width: 100%;
+            object-fit: cover;
+          "
+        />
+        <!-- Background Blend -->
+        <div class="relative bg-opacity-70 bg-customDarkGreen2">
+          <!-- Container -->
+          <div class="container mx-auto px-5">
+            <!-- Flex -->
             <div
-              class="flex flex-row justify-center text-center items-center w-full max-w-md"
+              class="flex flex-col justify-center items-center space-y-10 min-h-screen pt-28"
             >
-              <div class="border-2 w-1/4"></div>
-              <h1 class="lg:text-xl">Wedding Invitation</h1>
-              <div class="border-2 w-1/4"></div>
-            </div>
-
-            <h2
-              class="font-rochester font-bold text-5xl text-white lg:text-7xl"
-            >
-              Farrel & Fitri
-            </h2>
-
-            <img
-              src="https://wedding.invie.my.id/assets/vendors/theme-three/img/decoration/foliage-horizontal-1.svg"
-              alt=""
-            />
-
-            <div
-              class="flex flex-col justify-center items-center space-y-12 py-14"
-            >
+              <h1>Farrel & Fitri</h1>
+              <div>
+                <p class="text-date">Minggu. 26 Februari 2023</p>
+                <p class="text-date">Pukul 08.00 s.d 10.00 WIB</p>
+              </div>
               <div class="flex flex-row space-x-4">
                 <div>
-                  <p
-                    class="font-poppins font-bold text-sm text-center text-white"
-                  >
-                    00
-                  </p>
-                  <p
-                    class="font-poppins font-bold text-sm text-center text-white uppercase"
-                  >
-                    Hari
-                  </p>
+                  <p class="text-date font-bold">00</p>
+                  <p class="text-date font-bold">Hari</p>
                 </div>
                 <div>
-                  <p
-                    class="font-poppins font-bold text-sm text-center text-white"
-                  >
-                    00
-                  </p>
-                  <p
-                    class="font-poppins font-bold text-sm text-center text-white uppercase"
-                  >
-                    Hari
-                  </p>
+                  <p class="text-date font-bold">00</p>
+                  <p class="text-date font-bold">Hari</p>
                 </div>
                 <div>
-                  <p
-                    class="font-poppins font-bold text-sm text-center text-white"
-                  >
-                    00
-                  </p>
-                  <p
-                    class="font-poppins font-bold text-sm text-center text-white uppercase"
-                  >
-                    Hari
-                  </p>
+                  <p class="text-date font-bold">00</p>
+                  <p class="text-date font-bold">Hari</p>
                 </div>
                 <div>
-                  <p
-                    class="font-poppins font-bold text-sm text-center text-white"
-                  >
-                    00
-                  </p>
-                  <p
-                    class="font-poppins font-bold text-sm text-center text-white uppercase"
-                  >
-                    Hari
-                  </p>
+                  <p class="text-date font-bold">00</p>
+                  <p class="text-date font-bold">Hari</p>
                 </div>
               </div>
-              <button class="btn-custom">Save The Date</button>
+              <button class="btn-custom2">Save The Date</button>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- PARTNER SECTION -->
-      <section id="partner">
+      <!-- OPENER SECTION -->
+      <section class="opener">
         <!-- Container Section -->
-        <div class="container mx-auto px-5 py-16">
+        <div class="container reveal mx-auto py-16 px-5">
+          <!-- Flex Section -->
+          <div class="flex flex-col justify-center items-center space-y-8">
+            <p class="max-w-xl text-opener">
+              “Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan
+              pasangan-pasangan untukmu dari jenismu sendiri, agar kamu
+              cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di
+              antaramu rasa kasih dan sayang. Sungguh, pada yang demikian itu
+              benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang
+              berpikir.”
+            </p>
+            <p class="text-opener">QS. Ar-Rum (30): 21</p>
+          </div>
+        </div>
+        <!-- Background Flower Fixed -->
+        <div>
+          <!-- <div class="relative w-full h-96 overflow-hidden"> -->
+          <div style="position: relative; height: 350px; clip-path: inset(0)">
+            <!-- <div
+            class="absolute inset-0 w-full h-full object-cover bg-center bg-cover bg-no-repeat bg-fixed"
+            style="
+              background-image: url('https://wedding.invie.my.id/assets/vendors/theme-four/img/bg/section-2.jpg');
+            "
+          > -->
+            <img
+              src="https://wedding.invie.my.id/assets/vendors/theme-four/img/bg/section-2.jpg"
+              alt=""
+              style="
+                object-fit: cover;
+                position: fixed;
+                height: 100%;
+                width: 100%;
+                left: 0;
+                top: 0;
+              "
+            />
+            <!-- <img
+              src="https://wedding.invie.my.id/assets/vendors/theme-four/img/bg/section-2.jpg"
+              alt=""
+            /> -->
+            <!-- </div> -->
+            <!-- Background Blend -->
+            <div class="fixed inset-0 bg-opacity-70 bg-customDarkGreen2"></div>
+          </div>
+        </div>
+      </section>
+      <!-- BRIDE SECTION -->
+      <section id="bride">
+        <!-- Container Section -->
+        <div class="container reveal mx-auto px-5 py-16">
           <!-- Flex Section -->
           <div class="flex flex-col justify-center items-center">
-            <!-- Content -->
-            <div class="content max-w-4xl space-y-8 lg:space-y-3">
-              <p class="text-content font-semibold">
-                “Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan
-                pasangan-pasangan untukmu dari jenismu sendiri, agar kamu
-                cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di
-                antaramu rasa kasih dan sayang. Sungguh, pada yang demikian itu
-                benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum
-                yang berpikir.”
-              </p>
-              <p class="text-content lg:text-lg">QS. Ar-Rum (30): 21</p>
-              <!-- Title -->
-              <div class="title pt-36 pb-12">
-                <h2>Mohon Doa & Restu</h2>
-              </div>
-              <p class="text-content text-black lg:text-2xl">
-                Minggu, 26 Februari 2023. Bogor, Indonesia
-              </p>
-              <p class="text-content">
+            <!-- Header -->
+            <div
+              class="flex flex-col justify-center items-center space-y-4 pt-24 pb-12"
+            >
+              <img
+                src="https://wedding.invie.my.id/assets/vendors/theme-four/img/decoration/foliage-horizontal-1.svg"
+                class="w-48"
+                alt=""
+              />
+              <h3 class="text-subheader">Mempelai</h3>
+              <h2 class="text-header">Mohon Doa & Restu</h2>
+            </div>
+            <div class="space-y-4">
+              <p class="text-opener">
                 Assalamu'alaikum Warahamatullahi Wabarakatuh
               </p>
-              <p class="text-content max-w-6xl">
+              <p class="text-opener max-w-2xl">
                 Maha Suci Allah yang telah menciptakan mahkluk-Nya
                 berpasang-pasangan. Ya Allah semoga ridho-Mu tercurah mengiringi
                 pernikahan putra-putri kami :
               </p>
             </div>
-            <!-- Decoration -->
-            <div class="pt-28 w-64 lg:hidden">
-              <img
-                src="https://wedding.invie.my.id/assets/vendors/theme-three/img/decoration/foliage-horizontal-2.svg"
-                alt=""
-              />
-            </div>
-          </div>
-
-          <div
-            class="flex flex-col justify-evenly space-y-16 pt-8 pb-16 md:flex-row md:space-y-0 lg:justify-center"
-          >
-            <!-- Item 1 -->
             <div
-              class="flex flex-col items-center space-y-8 lg:items-start lg:w-64"
+              class="flex flex-col justify-evenly space-y-16 pt-8 pb-16 md:flex-row md:space-y-0 lg:justify-around"
             >
-              <!-- Image -->
-              <div class="img-profile-left">
-                <img
-                  src="../images/prewed/wisnu2.jpg"
-                  class="w-64 rotate-12 bg-cover"
-                  alt=""
-                />
-              </div>
-              <!-- Profile -->
-              <div
-                class="flex flex-col justify-center items-center space-y-2 lg:items-start lg:pt-6"
-              >
-                <h3>Farrel Alamsyah</h3>
-                <p class="text-content max-w-xs lg:text-left">
-                  Putra Pertama dari Bapak Sudrajat & Ibu Susmita
-                </p>
-                <!-- Button -->
-                <a
-                  href="https://www.instagram.com/invie.id/?hl=id"
-                  class="btn-custom flex space-x-2"
+              <!-- Item 1 -->
+              <div class="flex flex-col items-center space-y-8 lg:w-1/2">
+                <!-- Image -->
+                <div class="">
+                  <img
+                    src="images/prewed/wisnu.jpg"
+                    class="w-44 bg-cover rounded-full lg:w-48"
+                    alt=""
+                  />
+                </div>
+                <!-- Profile -->
+                <div
+                  class="flex flex-col justify-center items-center space-y-2 lg:pt-6"
                 >
-                  <!-- Icon IG -->
-                  <svg
-                    class="w-4 fill-current mx-1"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 448 512"
+                  <h4 class="title-profile">Farrel Alamsyah</h4>
+                  <p class="text-profile">
+                    Putra Pertama dari Bapak Sudrajat & Ibu Susmita
+                  </p>
+                  <!-- Button -->
+                  <a
+                    href="https://www.instagram.com/invie.id/?hl=id"
+                    class="btn-custom flex space-x-2"
                   >
-                    <!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
-                    <path
-                      d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
-                    />
-                  </svg>
-                  invie.id
-                </a>
+                    <!-- Icon IG -->
+                    <svg
+                      class="w-4 fill-current mx-2"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 448 512"
+                    >
+                      <!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                      <path
+                        d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
+                      />
+                    </svg>
+                    invie.id
+                  </a>
+                </div>
               </div>
-            </div>
-            <!-- Decoration Center -->
-            <div class="hidden lg:block">
-              <img
-                src="https://wedding.invie.my.id/assets/vendors/theme-three/img/decoration/foliage-horizontal-2.svg"
-                alt=""
-              />
-            </div>
-            <!-- Item 2 -->
-            <div class="flex flex-col items-center space-y-8 lg:w-64">
-              <!-- Image -->
-              <div class="img-profile-right">
-                <img
-                  src="images/prewed/siren.jpg"
-                  alt=""
-                  class="w-64 -rotate-12 bg-cover"
-                />
-              </div>
-              <!-- Profile -->
-              <div
-                class="flex flex-col justify-center items-center space-y-2 lg:items-start lg:pt-6"
-              >
-                <h3>Fitri Qonita</h3>
-                <p class="text-content max-w-xs lg:text-left">
-                  Putri kedua dari Bapak Salam & Ibu Rahmawati
-                </p>
-                <!-- Button -->
-                <a
-                  href="https://www.instagram.com/invie.id/?hl=id"
-                  class="btn-custom flex space-x-2"
+              <!-- Item 2 -->
+              <div class="flex flex-col items-center space-y-8 lg:w-1/2">
+                <!-- Image -->
+                <div class="">
+                  <img
+                    src="images/prewed/siren.jpg"
+                    alt=""
+                    class="w-44 bg-cover rounded-full lg:w-48"
+                  />
+                </div>
+                <!-- Profile -->
+                <div
+                  class="flex flex-col justify-center items-center space-y-2 lg:pt-6"
                 >
-                  <!-- Icon IG -->
-                  <svg
-                    class="w-4 fill-current mx-1"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 448 512"
+                  <h4 class="title-profile">Fitri Qonita</h4>
+                  <p class="text-profile">
+                    Putri kedua dari Bapak Salam & Ibu Rahmawati
+                  </p>
+                  <!-- Button -->
+                  <a
+                    href="https://www.instagram.com/invie.id/?hl=id"
+                    class="btn-custom flex space-x-2"
                   >
-                    <!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
-                    <path
-                      d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
-                    />
-                  </svg>
-                  invie.id
-                </a>
+                    <!-- Icon IG -->
+                    <svg
+                      class="w-4 fill-current mx-2"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 448 512"
+                    >
+                      <!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                      <path
+                        d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
+                      />
+                    </svg>
+                    invie.id
+                  </a>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
-      <!-- EVENT SECTION -->
-      <section id="event">
-        <!-- Flex -->
-        <div
-          class="container mx-auto flex flex-col justify-center items-center space-y-3 lg:space-y-4"
-        >
-          <h2 class="text-white">Wedding Events</h2>
-          <h4>Akad nikah & Resepsi</h4>
-          <div class="circle-decoration">
-            <h4 class="font-rochester font-bold text-4xl text-white">F & F</h4>
-          </div>
-          <div class="flex flex-row justify-center items-center space-x-4">
-            <h5>26-02-2023</h5>
-            <div class="fill-white w-3 h-3">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                <!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
-                <path
-                  d="M128 0c17.7 0 32 14.3 32 32V64H288V32c0-17.7 14.3-32 32-32s32 14.3 32 32V64h48c26.5 0 48 21.5 48 48v48H0V112C0 85.5 21.5 64 48 64H96V32c0-17.7 14.3-32 32-32zM0 192H448V464c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V192zm80 64c-8.8 0-16 7.2-16 16v96c0 8.8 7.2 16 16 16h96c8.8 0 16-7.2 16-16V272c0-8.8-7.2-16-16-16H80z"
-                />
-              </svg>
+      <!-- INVITATION SECTION -->
+      <section id="invitation">
+        <!-- Container -->
+        <div class="container reveal mx-auto py-0 px-5">
+          <div
+            class="flex flex-col justify-center items-center space-y-12 pt-24 pb-12"
+          >
+            <!-- Header Text -->
+            <img
+              src="https://wedding.invie.my.id/assets/vendors/theme-four/img/decoration/foliage-horizontal-1.svg"
+              class="w-48"
+              alt=""
+            />
+            <h3 class="text-subheader">Waktu Acara</h3>
+            <h2 class="text-header">Undangan Anda</h2>
+            <p class="text-opener max-w-2xl">
+              Dengan memohon rahmat dan ridho Allah, kami mengundang
+              Bapak/Ibu/Saudara/i untuk menghadiri resepsi pernikahan kami yang
+              insyaa Allah akan diselenggarakan pada:
+            </p>
+            <!-- Flex Row -->
+            <div
+              class="flex flex-col lg:flex-row lg:justify-between lg:items-center lg:space-x-24"
+            >
+              <!-- Content 1 -->
+              <div class="space-y-2">
+                <h4 class="font-rochester font-semibold text-3xl text-center">
+                  Akad Nikah
+                </h4>
+                <div
+                  class="flex flex-row justify-center items-center space-x-16"
+                >
+                  <p class="font-poppins py-2 border-y border-black">Minggu</p>
+                  <div class="flex flex-col space-y-2">
+                    <span class="font-poppins text-xs font-light text-center"
+                      >Februari</span
+                    >
+                    <span class="font-rochester text-5xl text-center">26</span>
+                    <span class="font-poppins text-xs font-light text-center"
+                      >2023</span
+                    >
+                  </div>
+                  <p class="font-poppins py-2 border-y border-black">08.00</p>
+                </div>
+              </div>
+              <!-- Content 2 -->
+              <div class="space-y-2">
+                <h4 class="font-rochester font-semibold text-3xl text-center">
+                  Resepsi Pernikahan
+                </h4>
+                <div
+                  class="flex flex-row justify-center items-center space-x-16"
+                >
+                  <p class="font-poppins py-2 border-y border-black">Minggu</p>
+                  <div class="flex flex-col space-y-2">
+                    <span class="font-poppins text-xs font-light text-center"
+                      >Februari</span
+                    >
+                    <span class="font-rochester text-5xl text-center">26</span>
+                    <span class="font-poppins text-xs font-light text-center"
+                      >2023</span
+                    >
+                  </div>
+                  <p class="font-poppins py-2 border-y border-black">10.00</p>
+                </div>
+              </div>
             </div>
-            <div class="border-x border-8 text-white"></div>
-            <div class="fill-white w-3 h-3">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                <!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
-                <path
-                  d="M128 0c17.7 0 32 14.3 32 32V64H288V32c0-17.7 14.3-32 32-32s32 14.3 32 32V64h48c26.5 0 48 21.5 48 48v48H0V112C0 85.5 21.5 64 48 64H96V32c0-17.7 14.3-32 32-32zM0 192H448V464c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V192zm80 64c-8.8 0-16 7.2-16 16v96c0 8.8 7.2 16 16 16h96c8.8 0 16-7.2 16-16V272c0-8.8-7.2-16-16-16H80z"
-                />
-              </svg>
+            <div class="flex flex-row justify-center items-center space-x-4">
+              <i class="fa-solid fa-location-dot"></i>
+              <p class="text-content">Auditorium Masjid Assalam</p>
             </div>
-            <h5>08.00 s.d 15.00 WIB</h5>
-          </div>
-          <h5>Auditorium Masjid Assalam</h5>
-          <!-- Button -->
-          <div class="btn-custom">
-            <a href="#">Open Maps</a>
+            <!-- Maps and Button -->
+            <div
+              class="flex flex-col justify-center items-center space-y-4 w-full lg:w-3/4"
+            >
+              <div class="aspect-map">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126922.57258124102!2d106.80933440277745!3d-6.220090488908296!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3637a31fbab%3A0x9e44dab33e9d14bd!2sAuditorium%20Masjid%20As%20Salalm!5e0!3m2!1sid!2sid!4v1676886578111!5m2!1sid!2sid"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <!-- Button -->
+              <a href="https://goo.gl/maps/BNnpD8MxBHBKa2P86" class="btn-custom"
+                >Open Maps</a
+              >
+            </div>
           </div>
         </div>
       </section>
-
       <!-- LIVE STREAMING SECTION -->
       <section id="live">
         <!-- Flex -->
         <div
           class="flex flex-col justify-center items-center space-y-10 px-5 py-28"
         >
-          <h2>Live Streaming</h2>
+          <!-- Header Text -->
+          <div class="space-y-4">
+            <img
+              src="https://wedding.invie.my.id/assets/vendors/theme-four/img/decoration/foliage-horizontal-1.svg"
+              class="w-48"
+              alt=""
+            />
+            <h2 class="text-header">Live Streaming</h2>
+          </div>
           <!-- Box -->
           <div
             class="max-w-2xl flex flex-col justify-center items-center space-y-4 p-5 pb-10 w-full border rounded-md bg-white lg:space-y-4"
           >
-            <p class="text-content text-base">
+            <p class="text-content">
               Temui kami secara virtual untuk menyaksikan acara pernikahan kami
               yang akan disiarkan langsung, dengan menekan tombol di bawah ini :
             </p>
@@ -432,265 +542,267 @@
             <img src="images/zoom.png" alt="" class="w-44" />
             <!-- Button -->
             <a href="#" class="btn-custom">Zoom Live</a>
-            <div>
-              <p class="text-content">Meeting ID: 123 123 123</p>
-              <p class="text-content">Password: 123456</p>
-            </div>
+            <p class="text-content">Meeting ID: 123 123 123</p>
+            <p class="text-content">Password: 123456</p>
           </div>
         </div>
       </section>
 
       <!-- PROTOCOL SECTION -->
       <section id="protocol">
-        <!-- Container -->
+        <!-- Container Section -->
         <div
           class="container mx-auto space-y-4 px-5 py-14 lg:pt-20 lg:pb-56 lg:space-y-12"
         >
-          <!-- Header Text -->
-          <div
-            class="flex flex-col justify-center items-center space-y-8 lg:space-y-16"
-          >
-            <p class="text-content lg:text-base max-w-2xl">
+          <!-- Flex Section -->
+          <div class="flex flex-col justify-center items-center space-y-4">
+            <!-- Header -->
+            <img
+              src="https://wedding.invie.my.id/assets/vendors/theme-four/img/decoration/foliage-horizontal-1.svg"
+              class="w-48"
+              alt=""
+            />
+            <h2 class="text-header">Protokol Kesehatan</h2>
+            <p class="text-opener max-w-xl">
               Untuk mematuhi himbauan pemerintah dalam pencegahan penyebaran
               Covid-19, maka diharapkan Bapak/Ibu/Saudara/i tamu undangan untuk
               :
             </p>
-            <h2>Protokol Kesehatan</h2>
-          </div>
-          <!-- First Row -->
-          <div
-            class="flex flex-col items-center justify-between text-center md:space-y-12 py-10 space-y-8 lg:flex-row lg:px-16 lg:space-y-0 lg:space-x-8 lg:pt-8"
-          >
+            <!-- Flex Row -->
             <div
-              class="flex flex-col space-y-8 md:w-1/2 md:flex-row md:space-y-0 lg:space-x-8"
+              class="flex flex-col items-center justify-between text-center md:space-y-12 py-10 space-y-8 lg:flex-row lg:px-16 lg:space-y-0 lg:space-x-8 lg:pt-8"
             >
-              <!-- Item 1 -->
-              <div class="flex flex-col items-center space-y-6">
-                <!-- Image Container For Background & Center -->
-                <div
-                  class="flex items-center justify-center w-20 h-20 p-4 rounded-full bg-customLightGrey"
-                >
-                  <svg
-                    class="fill-customGreen w-10 h-10"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 512 512"
+              <div
+                class="flex flex-col space-y-8 md:w-1/2 md:flex-row md:space-y-0 lg:space-x-8"
+              >
+                <!-- Item 1 -->
+                <div class="flex flex-col items-center space-y-6">
+                  <!-- Image Container For Background & Center -->
+                  <div
+                    class="flex items-center justify-center w-20 h-20 p-4 rounded-full bg-customLightGrey"
                   >
-                    <!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
-                    <path
-                      d="M0 224.2c0-22.2 3.2-43.6 9.2-63.9l227 165.1C228.5 337.8 224 352.4 224 368V512H96c-17.7 0-32-14.3-32-32V407.3c0-16.7-6.9-32.5-17.1-45.8C16.6 322.4 0 274.1 0 224.2zm258.6 77.9L21 129.3C56.7 53 134.2 0 224 0h32c95.2 0 174.2 69.3 189.4 160.1c2.2 13 6.7 25.7 15 36.1l42 52.6c6.2 7.8 9.6 17.4 9.6 27.4c0 4.1-.6 8.1-1.6 11.9H304c-16.9 0-32.5 5.2-45.4 14.1zM352 224a32 32 0 1 0 0-64 32 32 0 1 0 0 64zM256 512V368c0-26.5 21.5-48 48-48H512l-16 48H336c-8.8 0-16 7.2-16 16s7.2 16 16 16H485.3l-10.7 32H336c-8.8 0-16 7.2-16 16s7.2 16 16 16H464l-1.4 4.2c-8.7 26.1-33.2 43.8-60.7 43.8H256z"
-                    />
-                  </svg>
+                    <svg
+                      class="fill-customDarkGreen w-10 h-10"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 512 512"
+                    >
+                      <!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                      <path
+                        d="M0 224.2c0-22.2 3.2-43.6 9.2-63.9l227 165.1C228.5 337.8 224 352.4 224 368V512H96c-17.7 0-32-14.3-32-32V407.3c0-16.7-6.9-32.5-17.1-45.8C16.6 322.4 0 274.1 0 224.2zm258.6 77.9L21 129.3C56.7 53 134.2 0 224 0h32c95.2 0 174.2 69.3 189.4 160.1c2.2 13 6.7 25.7 15 36.1l42 52.6c6.2 7.8 9.6 17.4 9.6 27.4c0 4.1-.6 8.1-1.6 11.9H304c-16.9 0-32.5 5.2-45.4 14.1zM352 224a32 32 0 1 0 0-64 32 32 0 1 0 0 64zM256 512V368c0-26.5 21.5-48 48-48H512l-16 48H336c-8.8 0-16 7.2-16 16s7.2 16 16 16H485.3l-10.7 32H336c-8.8 0-16 7.2-16 16s7.2 16 16 16H464l-1.4 4.2c-8.7 26.1-33.2 43.8-60.7 43.8H256z"
+                      />
+                    </svg>
+                  </div>
+                  <p class="text-content">
+                    Selalu memakai masker selama acara berlangsung
+                  </p>
                 </div>
-                <p class="text-protokol">
-                  Selalu memakai masker selama acara berlangsung
-                </p>
-              </div>
-              <!-- Item 2 -->
-              <div class="flex flex-col justify-center items-center space-y-6">
+                <!-- Item 2 -->
                 <div
-                  class="flex items-center justify-center w-20 h-20 p-4 rounded-full bg-customLightGrey"
+                  class="flex flex-col justify-center items-center space-y-6"
                 >
-                  <svg
-                    class="fill-customGreen w-10 h-10"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 512 512"
+                  <div
+                    class="flex items-center justify-center w-20 h-20 p-4 rounded-full bg-customLightGrey"
                   >
-                    <!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
-                    <path
-                      d="M384 64a32 32 0 1 0 0-64 32 32 0 1 0 0 64zm96 128a32 32 0 1 0 0-64 32 32 0 1 0 0 64zM128 464a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zM0 160l.1 72.6c.1 52.2 24 101 64 133.1c-.1-1.9-.1-3.8-.1-5.7v-8c0-71.8 37-138.6 97.9-176.7l60.2-37.6c8.6-5.4 17.9-8.4 27.3-9.4l45.9-79.5c6.6-11.5 2.7-26.2-8.8-32.8s-26.2-2.7-32.8 8.8l-78 135.1c-3.3 5.7-10.7 7.7-16.4 4.4s-7.7-10.7-4.4-16.4l62-107.4c6.6-11.5 2.7-26.2-8.8-32.8S182 5 175.4 16.5l-68 117.8 0 0 0 0-43.3 75L64 160c0-17.7-14.4-32-32-32s-32 14.4-32 32zM300.1 88.5L275.5 131c13.9 4.5 26.4 13.7 34.7 27c.9 1.5 1.7 2.9 2.5 4.4l28.9-50c6.6-11.5 2.7-26.2-8.8-32.8s-26.2-2.7-32.8 8.8zm46.4 63.7l-26.8 46.4c-.6 6-2.1 11.8-4.3 17.4H320h13.3l0 0H365l23-39.8c6.6-11.5 2.7-26.2-8.8-32.8s-26.2-2.7-32.8 8.8zM283.1 175c-9.4-15-29.1-19.5-44.1-10.2l-60.2 37.6C127.3 234.7 96 291.2 96 352v8c0 8.9 .8 17.6 2.2 26.1c35.4 8.2 61.8 40 61.8 77.9c0 6.3-.7 12.5-2.1 18.4C183.1 501 214.3 512 248 512H424c13.3 0 24-10.7 24-24s-10.7-24-24-24H332c-6.6 0-12-5.4-12-12s5.4-12 12-12H456c13.3 0 24-10.7 24-24s-10.7-24-24-24H332c-6.6 0-12-5.4-12-12s5.4-12 12-12H488c13.3 0 24-10.7 24-24s-10.7-24-24-24H332c-6.6 0-12-5.4-12-12s5.4-12 12-12H456c13.3 0 24-10.7 24-24s-10.7-24-24-24H320l0 0 0 0H226.8L273 219.1c15-9.4 19.5-29.1 10.2-44.1z"
-                    />
-                  </svg>
+                    <svg
+                      class="fill-customDarkGreen w-10 h-10"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 512 512"
+                    >
+                      <!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                      <path
+                        d="M384 64a32 32 0 1 0 0-64 32 32 0 1 0 0 64zm96 128a32 32 0 1 0 0-64 32 32 0 1 0 0 64zM128 464a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zM0 160l.1 72.6c.1 52.2 24 101 64 133.1c-.1-1.9-.1-3.8-.1-5.7v-8c0-71.8 37-138.6 97.9-176.7l60.2-37.6c8.6-5.4 17.9-8.4 27.3-9.4l45.9-79.5c6.6-11.5 2.7-26.2-8.8-32.8s-26.2-2.7-32.8 8.8l-78 135.1c-3.3 5.7-10.7 7.7-16.4 4.4s-7.7-10.7-4.4-16.4l62-107.4c6.6-11.5 2.7-26.2-8.8-32.8S182 5 175.4 16.5l-68 117.8 0 0 0 0-43.3 75L64 160c0-17.7-14.4-32-32-32s-32 14.4-32 32zM300.1 88.5L275.5 131c13.9 4.5 26.4 13.7 34.7 27c.9 1.5 1.7 2.9 2.5 4.4l28.9-50c6.6-11.5 2.7-26.2-8.8-32.8s-26.2-2.7-32.8 8.8zm46.4 63.7l-26.8 46.4c-.6 6-2.1 11.8-4.3 17.4H320h13.3l0 0H365l23-39.8c6.6-11.5 2.7-26.2-8.8-32.8s-26.2-2.7-32.8 8.8zM283.1 175c-9.4-15-29.1-19.5-44.1-10.2l-60.2 37.6C127.3 234.7 96 291.2 96 352v8c0 8.9 .8 17.6 2.2 26.1c35.4 8.2 61.8 40 61.8 77.9c0 6.3-.7 12.5-2.1 18.4C183.1 501 214.3 512 248 512H424c13.3 0 24-10.7 24-24s-10.7-24-24-24H332c-6.6 0-12-5.4-12-12s5.4-12 12-12H456c13.3 0 24-10.7 24-24s-10.7-24-24-24H332c-6.6 0-12-5.4-12-12s5.4-12 12-12H488c13.3 0 24-10.7 24-24s-10.7-24-24-24H332c-6.6 0-12-5.4-12-12s5.4-12 12-12H456c13.3 0 24-10.7 24-24s-10.7-24-24-24H320l0 0 0 0H226.8L273 219.1c15-9.4 19.5-29.1 10.2-44.1z"
+                      />
+                    </svg>
+                  </div>
+                  <p class="text-content">
+                    Mencuci tangan sebelum & sesudah memasuki lokasi acara
+                  </p>
                 </div>
-                <p class="text-protokol">
-                  Mencuci tangan sebelum & sesudah memasuki lokasi acara
-                </p>
               </div>
-            </div>
 
-            <div
-              class="flex flex-col space-y-8 md:w-1/2 md:flex-row md:space-y-0 lg:space-x-8"
-            >
-              <!-- Item 3 -->
-              <div class="flex flex-col items-center space-y-6">
-                <!-- Image Container For Background & Center -->
-                <div
-                  class="flex items-center justify-center w-20 h-20 p-4 rounded-full bg-customLightGrey"
-                >
-                  <svg
-                    class="fill-customGreen w-10 h-10"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 640 512"
+              <div
+                class="flex flex-col space-y-8 md:w-1/2 md:flex-row md:space-y-0 lg:space-x-8"
+              >
+                <!-- Item 3 -->
+                <div class="flex flex-col items-center space-y-6">
+                  <!-- Image Container For Background & Center -->
+                  <div
+                    class="flex items-center justify-center w-20 h-20 p-4 rounded-full bg-customLightGrey"
                   >
-                    <!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
-                    <path
-                      d="M43 64a64 64 0 1 1 128 0A64 64 0 1 1 43 64zM4.9 233.4C8.3 191.9 43 160 84.6 160h44.8c27 0 51 13.4 65.5 34.1c-2.7 1.9-5.2 4-7.5 6.3l-64 64c-21.9 21.9-21.9 57.3 0 79.2L171 391.2V464c0 26.5-21.5 48-48 48H91c-26.5 0-48-21.5-48-48V348.3C16.5 338.8-1.7 312.4 .8 282.7l4.1-49.3zM427 64a64 64 0 1 1 128 0A64 64 0 1 1 427 64zM410.6 200.4c-2.3-2.3-4.9-4.4-7.5-6.3c14.5-20.7 38.6-34.1 65.5-34.1h44.8c41.6 0 76.3 31.9 79.7 73.4l4.1 49.3c2.5 29.8-15.7 56.1-42.2 65.6V464c0 26.5-21.5 48-48 48H475c-26.5 0-48-21.5-48-48V391.2l47.6-47.6c21.9-21.9 21.9-57.3 0-79.2l-64-64zM251 240v32h96V240c0-9.7 5.8-18.5 14.8-22.2s19.3-1.7 26.2 5.2l64 64c9.4 9.4 9.4 24.6 0 33.9l-64 64c-6.9 6.9-17.2 8.9-26.2 5.2s-14.8-12.5-14.8-22.2V336H251v32c0 9.7-5.8 18.5-14.8 22.2s-19.3 1.7-26.2-5.2l-64-64c-9.4-9.4-9.4-24.6 0-33.9l64-64c6.9-6.9 17.2-8.9 26.2-5.2s14.8 12.5 14.8 22.2z"
-                    />
-                  </svg>
+                    <svg
+                      class="fill-customDarkGreen w-10 h-10"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 640 512"
+                    >
+                      <!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                      <path
+                        d="M43 64a64 64 0 1 1 128 0A64 64 0 1 1 43 64zM4.9 233.4C8.3 191.9 43 160 84.6 160h44.8c27 0 51 13.4 65.5 34.1c-2.7 1.9-5.2 4-7.5 6.3l-64 64c-21.9 21.9-21.9 57.3 0 79.2L171 391.2V464c0 26.5-21.5 48-48 48H91c-26.5 0-48-21.5-48-48V348.3C16.5 338.8-1.7 312.4 .8 282.7l4.1-49.3zM427 64a64 64 0 1 1 128 0A64 64 0 1 1 427 64zM410.6 200.4c-2.3-2.3-4.9-4.4-7.5-6.3c14.5-20.7 38.6-34.1 65.5-34.1h44.8c41.6 0 76.3 31.9 79.7 73.4l4.1 49.3c2.5 29.8-15.7 56.1-42.2 65.6V464c0 26.5-21.5 48-48 48H475c-26.5 0-48-21.5-48-48V391.2l47.6-47.6c21.9-21.9 21.9-57.3 0-79.2l-64-64zM251 240v32h96V240c0-9.7 5.8-18.5 14.8-22.2s19.3-1.7 26.2 5.2l64 64c9.4 9.4 9.4 24.6 0 33.9l-64 64c-6.9 6.9-17.2 8.9-26.2 5.2s-14.8-12.5-14.8-22.2V336H251v32c0 9.7-5.8 18.5-14.8 22.2s-19.3 1.7-26.2-5.2l-64-64c-9.4-9.4-9.4-24.6 0-33.9l64-64c6.9-6.9 17.2-8.9 26.2-5.2s14.8 12.5 14.8 22.2z"
+                      />
+                    </svg>
+                  </div>
+                  <p class="text-content">
+                    Tidak berkerumun, dengan menjaga jarak satu sama lain
+                  </p>
                 </div>
-                <p class="text-protokol">
-                  Tidak berkerumun, dengan menjaga jarak satu sama lain
-                </p>
-              </div>
-              <!-- Item 4 -->
-              <div class="flex flex-col justify-center items-center space-y-6">
+                <!-- Item 4 -->
                 <div
-                  class="flex items-center justify-center w-20 h-20 p-4 rounded-full bg-customLightGrey"
+                  class="flex flex-col justify-center items-center space-y-6"
                 >
-                  <svg
-                    class="fill-customGreen w-10 h-10"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 640 512"
+                  <div
+                    class="flex items-center justify-center w-20 h-20 p-4 rounded-full bg-customLightGrey"
                   >
-                    <!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
-                    <path
-                      d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7l-135-105.8c-1.1-11.4-6.3-22.3-15.3-30.7l-134.2-123-23.4 18.2-26-20.3 77.2-60.1c7-5.4 17-4.2 22.5 2.8s4.2 17-2.8 22.5l-20.9 16.2L512 316.8V128h-.7l-3.9-2.5L434.8 79c-15.3-9.8-33.2-15-51.4-15c-21.8 0-43 7.5-60 21.2l-89.7 72.6-25.8-20.3 81.8-66.2c-11.6-4.9-24.1-7.4-36.8-7.4C234 64 215.7 69.6 200 80l-35.5 23.7L38.8 5.1zM96 171.6L40.6 128H0V352c0 17.7 14.3 32 32 32H64c17.7 0 32-14.3 32-32V171.6zM413.6 421.9L128 196.9V352h28.2l91.4 83.4c19.6 17.9 49.9 16.5 67.8-3.1c5.5-6.1 9.2-13.2 11.1-20.6l17 15.6c19.5 17.9 49.9 16.6 67.8-2.9c.8-.8 1.5-1.7 2.2-2.6zM48 320a16 16 0 1 1 0 32 16 16 0 1 1 0-32zM544 128V352c0 17.7 14.3 32 32 32h32c17.7 0 32-14.3 32-32V128H544zm32 208a16 16 0 1 1 32 0 16 16 0 1 1 -32 0z"
-                    />
-                  </svg>
+                    <svg
+                      class="fill-customDarkGreen w-10 h-10"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 640 512"
+                    >
+                      <!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                      <path
+                        d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7l-135-105.8c-1.1-11.4-6.3-22.3-15.3-30.7l-134.2-123-23.4 18.2-26-20.3 77.2-60.1c7-5.4 17-4.2 22.5 2.8s4.2 17-2.8 22.5l-20.9 16.2L512 316.8V128h-.7l-3.9-2.5L434.8 79c-15.3-9.8-33.2-15-51.4-15c-21.8 0-43 7.5-60 21.2l-89.7 72.6-25.8-20.3 81.8-66.2c-11.6-4.9-24.1-7.4-36.8-7.4C234 64 215.7 69.6 200 80l-35.5 23.7L38.8 5.1zM96 171.6L40.6 128H0V352c0 17.7 14.3 32 32 32H64c17.7 0 32-14.3 32-32V171.6zM413.6 421.9L128 196.9V352h28.2l91.4 83.4c19.6 17.9 49.9 16.5 67.8-3.1c5.5-6.1 9.2-13.2 11.1-20.6l17 15.6c19.5 17.9 49.9 16.6 67.8-2.9c.8-.8 1.5-1.7 2.2-2.6zM48 320a16 16 0 1 1 0 32 16 16 0 1 1 0-32zM544 128V352c0 17.7 14.3 32 32 32h32c17.7 0 32-14.3 32-32V128H544zm32 208a16 16 0 1 1 32 0 16 16 0 1 1 -32 0z"
+                      />
+                    </svg>
+                  </div>
+                  <p class="text-content">
+                    Tidak bersalaman, dapat menggantinya dengan salaman jarak
+                    jauh
+                  </p>
                 </div>
-                <p class="text-protokol">
-                  Tidak bersalaman, dapat menggantinya dengan salaman jarak jauh
-                </p>
               </div>
             </div>
           </div>
         </div>
       </section>
-
       <!-- STORY SECTION -->
-      <section id="story-card">
-        <div class="flex flex-col justify-center items-center space-y-2">
-          <h2>How we meet?</h2>
-          <h4 class="text-customBrown">Cerita kami</h4>
-          <img
-            src="https://wedding.invie.my.id/assets/vendors/theme-three/img/decoration/foliage-horizontal-2.svg"
-            class="w-64"
-            alt=""
-          />
-        </div>
-        <!-- Container -->
-        <!-- <div
-          class="relative flex flex-col justify-center items-center space-y-8 px-5 lg:px-8"
-        > -->
-        <div
-          class="relative container mx-auto px-6 flex flex-col space-y-8 lg:px-8"
-        >
-          <!-- Line -->
-          <div
-            class="hidden absolute z-0 w-0.5 h-full bg-neutral-300 shadow-md inset-0 left-14 md:mx-auto md:right-0 md:left-0 lg:block"
-          ></div>
-          <!-- Relative -->
-          <div class="relative z-10">
-            <!-- Image Flower -->
-            <img
-              src="https://wedding.invie.my.id/assets/vendors/theme-three/img/decoration/card-decoration-section-3-1.svg"
-              class="flower-left"
-              alt=""
-            />
-            <!-- Dots -->
-            <div
-              class="bg-customLightGrey rounded-full w-5 h-5 hidden absolute mx-auto left-0 right-0 top-44 z-10 lg:block"
-            ></div>
-            <!-- Timeline Container -->
-            <div class="timeline-container timeline-container-left">
-              <!-- Shape -->
-              <div
-                class="timeline-pointer timeline-pointer-left border-b-2 border-l-1 md:border-t-1 md:border-r-2 md:border-b-0 md:border-l-0"
-                aria-hidden="true"
-              ></div>
-              <!-- Card Left 1 -->
-              <div
-                class="card-left bg-white p-12 rounded-md shadow-md space-y-8 md:max-w-2xl lg:bg-none"
-              >
-                <h6>Pertemuan Pertama</h6>
-                <p class="font-poppins text-xs text-customBrown lg:text-sm">
+      <section id="story">
+        <!-- Container Section -->
+        <div class="container mx-auto py-16 px-5">
+          <!-- Flex Section -->
+          <div class="flex flex-col justify-center items-center">
+            <!-- Header -->
+            <div class="space-y-4">
+              <img
+                src="https://wedding.invie.my.id/assets/vendors/theme-four/img/decoration/foliage-horizontal-1.svg"
+                class="w-48"
+                alt=""
+              />
+              <h3 class="text-subheader">Tentang cerita kami berdua</h3>
+              <h2 class="text-header">Story</h2>
+            </div>
+
+            <div class="flex flex-col justify-center items-center space-y-16">
+              <!-- Item 1 -->
+              <div class="max-w-2xl flex flex-col space-y-6 w-full">
+                <div
+                  class="flex flex-row items-center space-x-4 lg:justify-between lg:flex-row-reverse"
+                >
+                  <img
+                    src="images/prewed/prewed1.jpeg"
+                    class="img-story"
+                    alt=""
+                  />
+                  <div class="space-y-1 lg:space-y-0">
+                    <img
+                      src="https://wedding.invie.my.id/assets/vendors/theme-four/img/decoration/love.svg"
+                      alt=""
+                      class="w-2rem"
+                    />
+                    <div class="group space-y-2">
+                      <h5 class="title-story">Pertemuan Pertama</h5>
+                      <div class="border-story"></div>
+                    </div>
+                  </div>
+                </div>
+                <p class="text-story">
                   Kami pertama kali bertemu adalah di kampus kami. Saat itu saya
                   melihat dia sedang berjalan menuju kantin, indah sekali. Pada
                   saat itu juga saya sudah jatuh cinta pada pandangan pertama
                   kepadanya.
                 </p>
               </div>
-            </div>
-          </div>
-          <div class="relative z-10">
-            <img
-              src="https://wedding.invie.my.id/assets/vendors/theme-three/img/decoration/card-decoration-section-3-2.svg"
-              class="flower-right"
-              alt=""
-            />
-            <!-- Dots -->
-            <div
-              class="bg-customLightGrey rounded-full w-5 h-5 hidden absolute mx-auto left-0 right-0 top-44 z-10 lg:block"
-            ></div>
-            <div class="timeline-container">
-              <div
-                class="timeline-pointer border-b-2 border-l-1"
-                aria-hidden="true"
-              ></div>
-              <!-- Card 2 -->
-              <div
-                class="card bg-white p-12 rounded-md shadow-md space-y-8 md:max-w-2xl"
-              >
-                <h6>First Date</h6>
-                <p class="font-poppins text-xs text-customBrown lg:text-sm">
+
+              <!-- Item 2 -->
+              <div class="max-w-2xl flex flex-col space-y-6 w-full">
+                <div
+                  class="flex flex-row items-center space-x-4 lg:justify-between"
+                >
+                  <img
+                    src="images/prewed/prewed1.jpeg"
+                    class="img-story"
+                    alt=""
+                  />
+                  <div class="space-y-1 lg:space-y-0">
+                    <img
+                      src="https://wedding.invie.my.id/assets/vendors/theme-four/img/decoration/love.svg"
+                      alt=""
+                      class="w-2rem"
+                    />
+                    <div class="group space-y-2">
+                      <h5 class="title-story">First Date</h5>
+                      <div class="border-story"></div>
+                    </div>
+                  </div>
+                </div>
+                <p class="text-story">
                   Kencan pertama kami dimulai ketika saya memberanikan diri
                   untuk menyatakan perasaan saya kepadanya, dan saya tak
                   menyangka ternayata dia juga mencintai saya. Kami pun
                   berjalan-jalan mengitari kota pada saat itu.
                 </p>
               </div>
-            </div>
-          </div>
-          <div class="relative z-10">
-            <!-- Image Flower -->
-            <img
-              src="https://wedding.invie.my.id/assets/vendors/theme-three/img/decoration/card-decoration-section-3-1.svg"
-              class="flower-left"
-              alt=""
-            />
-            <!-- Dots -->
-            <div
-              class="bg-customLightGrey rounded-full w-5 h-5 hidden absolute mx-auto left-0 right-0 top-44 z-10 lg:block"
-            ></div>
-            <div class="timeline-container timeline-container-left">
-              <div
-                class="timeline-pointer timeline-pointer-left border-b-2 border-l-1 md:border-t-1 md:border-r-2 md:border-b-0 md:border-l-0"
-                aria-hidden="true"
-              ></div>
-              <!-- Card Left 3 -->
-              <div
-                class="card-left bg-white p-12 rounded-md shadow-md space-y-8 md:max-w-2xl"
-              >
-                <h6>In A Relationship</h6>
-                <p class="font-poppins text-xs text-customBrown lg:text-sm">
+
+              <!-- Item 3 -->
+              <div class="max-w-2xl flex flex-col space-y-6 w-full">
+                <div
+                  class="flex flex-row items-center space-x-4 lg:justify-between lg:flex-row-reverse"
+                >
+                  <img
+                    src="images/prewed/prewed1.jpeg"
+                    class="img-story"
+                    alt=""
+                  />
+                  <div class="space-y-1 lg:space-y-0">
+                    <img
+                      src="https://wedding.invie.my.id/assets/vendors/theme-four/img/decoration/love.svg"
+                      alt=""
+                      class="w-2rem"
+                    />
+                    <div class="group space-y-2">
+                      <h5 class="title-story">In A Relationship</h5>
+                      <div class="border-story"></div>
+                    </div>
+                  </div>
+                </div>
+                <p class="text-story">
                   Setiap hubungan pasti memiliki roller coasternya sendiri,
                   begitu juga dengan kami. Susah, senang, sedih, berantem,
                   baikan, kami jalani bersama-sama. Alhamdulillah dengan baiknya
                   komunikasi hubungan kami dapat berjalan dengan lancar.
                 </p>
               </div>
-            </div>
-          </div>
-          <div class="relative z-10">
-            <img
-              src="https://wedding.invie.my.id/assets/vendors/theme-three/img/decoration/card-decoration-section-3-2.svg"
-              class="flower-right"
-              alt=""
-            />
-            <!-- Dots -->
-            <div
-              class="bg-customLightGrey rounded-full w-5 h-5 hidden absolute mx-auto left-0 right-0 top-44 z-10 lg:block"
-            ></div>
-            <div class="timeline-container">
-              <div
-                class="timeline-pointer border-b-2 border-l-1"
-                aria-hidden="true"
-              ></div>
-              <!-- Card 4 -->
-              <div
-                class="card bg-white p-12 rounded-md shadow-md space-y-8 md:max-w-2xl"
-              >
-                <h6>To The Wedding</h6>
-                <p class="font-poppins text-xs text-customBrown lg:text-sm">
+
+              <!-- Item 4 -->
+              <div class="max-w-2xl flex flex-col space-y-6 w-full">
+                <div
+                  class="flex flex-row items-center space-x-4 lg:justify-between"
+                >
+                  <img
+                    src="images/prewed/prewed1.jpeg"
+                    class="img-story"
+                    alt=""
+                  />
+                  <div class="space-y-1 lg:space-y-0">
+                    <img
+                      src="https://wedding.invie.my.id/assets/vendors/theme-four/img/decoration/love.svg"
+                      alt=""
+                      class="w-2rem"
+                    />
+                    <div class="group space-y-2">
+                      <h5 class="title-story">To The Wedding</h5>
+                      <div class="border-story"></div>
+                    </div>
+                  </div>
+                </div>
+                <p class="text-story">
                   Pada momen ini saya yakin dialah tulang rusuk saya, separuh
                   hidup saya. Momen spesial kami akan dimulai pada titik ini,
                   momen kebahagiaan kami bersama membangun keluarga kecil kami.
@@ -703,88 +815,68 @@
       </section>
       <!-- GALLERY SECTION -->
       <section id="gallery">
-        <!-- Container -->
-        <div class="px-5 py-16 space-y-3 lg:px-24 lg:py-28">
-          <!-- Header Text -->
+        <!-- Container Section -->
+        <div class="container mx-auto px-5 py-16 space-y-3 lg:px-24 lg:py-28">
+          <!-- Header -->
           <div
-            class="flex flex-col items-center justify-center text-center space-y-2 py-12 lg:py-28"
+            class="header flex flex-col justify-center items-center space-y-4"
           >
-            <h2>Look at Our Happines</h2>
-            <h4 class="text-customBrown">Galeri</h4>
+            <img
+              src="https://wedding.invie.my.id/assets/vendors/theme-four/img/decoration/foliage-horizontal-1.svg"
+              class="w-48"
+              alt=""
+            />
+            <h3 class="text-subheader">
+              Sejak kami bertemu dan memutuskan menikah
+            </h3>
+            <h2 class="text-header">Galeri</h2>
           </div>
           <!-- Gallery Container -->
-          <div class="grid grid-cols-3 gap-3 lg:grid-cols-3 lg:gap-3 lg:pt-24">
-            <!-- Image 1 -->
-            <div class="aspect-w-2 aspect-h-3">
-              <img
-                src="images/prewed/prewed3.jpeg"
-                alt=""
-                class="object-cover shadow-lg rounded-lg"
-              />
-            </div>
-            <!-- Image 1 -->
+          <div class="grid gap-y-3">
             <div
-              class="aspect-w-2 aspect-h-3 sm:aspect-w-1 sm:aspect-h-1 lg:aspect-w-3 lg:aspect-h-4"
+              class="grid grid-cols-3 gap-3 lg:grid-cols-3 lg:gap-3 lg:pt-24"
             >
-              <img
-                src="images/prewed/prewed4.jpeg"
-                alt=""
-                class="object-cover shadow-lg rounded-lg"
-              />
-            </div>
+              <!-- Image 1 -->
+              <div class="aspect-gallery">
+                <img src="images/prewed/prewed3.jpeg" alt="" class="wrap" />
+              </div>
+              <!-- Image 2 -->
+              <div class="aspect-gallery">
+                <img src="images/prewed/prewed4.jpeg" alt="" class="wrap" />
+              </div>
 
-            <!-- Image 3 -->
-            <div
-              class="aspect-w-2 aspect-h-3 sm:aspect-w-1 sm:aspect-h-1 lg:aspect-w-3 lg:aspect-h-4"
-            >
-              <img
-                src="images/prewed/prewed5.jpeg"
-                alt=""
-                class="object-cover shadow-lg rounded-lg"
-              />
+              <!-- Image 3 -->
+              <div class="aspect-gallery">
+                <img src="images/prewed/prewed5.jpeg" alt="" class="wrap" />
+              </div>
             </div>
-
-            <!-- Image 4 -->
             <div
-              class="aspect-w-2 aspect-h-3 sm:aspect-w-1 sm:aspect-h-1 lg:aspect-w-3 lg:aspect-h-4"
+              class="grid grid-cols-3 gap-3 lg:grid-cols-3 lg:gap-3 lg:pt-24"
             >
-              <img
-                src="images/prewed/prewed6.jpeg"
-                alt=""
-                class="object-cover shadow-lg rounded-lg"
-              />
-            </div>
-            <!-- Image 5 -->
-            <div
-              class="aspect-w-2 aspect-h-3 sm:aspect-w-1 sm:aspect-h-1 lg:aspect-w-3 lg:aspect-h-4"
-            >
-              <img
-                src="images/prewed/prewed7.jpeg"
-                alt=""
-                class="object-cover shadow-lg rounded-lg"
-              />
-            </div>
-            <!-- Image 6 -->
-            <div
-              class="aspect-w-2 aspect-h-3 sm:aspect-w-1 sm:aspect-h-1 lg:aspect-w-3 lg:aspect-h-4"
-            >
-              <img
-                src="images/prewed/prewed8.jpeg"
-                alt=""
-                class="object-cover shadow-lg rounded-lg"
-              />
+              <!-- Image 4 -->
+              <div class="aspect-gallery">
+                <img src="images/prewed/prewed6.jpeg" alt="" class="wrap" />
+              </div>
+              <!-- Image 5 -->
+              <div class="aspect-gallery">
+                <img src="images/prewed/prewed7.jpeg" alt="" class="wrap" />
+              </div>
+              <!-- Image 6 -->
+              <div class="aspect-gallery">
+                <img src="images/prewed/prewed8.jpeg" alt="" class="wrap" />
+              </div>
             </div>
           </div>
           <!-- Video Gallery -->
           <div class="flex items-center justify-center">
             <div class="flex-1 space-y-1">
-              <div class="aspect-w-16 aspect-h-9">
+              <div class="aspect-video">
                 <iframe
                   src="https://www.youtube.com/embed/6Q0vGrB2Kcc"
                   frameborder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowfullscreen
-                  class="rounded-lg shadow-lg"
+                  class="wrap"
                 ></iframe>
               </div>
             </div>
@@ -792,26 +884,31 @@
         </div>
       </section>
 
-      <!-- Gift Section -->
+      <!-- GIFT SECTION -->
       <section id="gift">
-        <!-- Features Container -->
-        <div class="container mx-auto px-5 py-24">
-          <!-- Flex Container -->
+        <!-- Container Section -->
+        <div class="container mx-auto px-5 py-16">
+          <!-- Flex Section -->
           <div
             class="flex flex-col justify-center items-center w-full space-y-8 lg:space-y-12"
           >
-            <h2 class="text-white">Love Gift</h2>
-            <p class="text-content text-white max-w-2xl">
-              Tanpa mengurangi rasa hormat kami, bagi bapak ibu yang ingin
-              memberikan tanda kasih untuk kami, dapat melalui :
-            </p>
-
+            <!-- Header -->
+            <div
+              class="header flex flex-col justify-center items-center space-y-4"
+            >
+              <img
+                src="https://wedding.invie.my.id/assets/vendors/theme-four/img/decoration/foliage-horizontal-1.svg"
+                class="w-48"
+                alt=""
+              />
+              <h2 class="text-header">Love Gift</h2>
+            </div>
             <!-- Card -->
             <div
               class="card-gift relative flex flex-col p-4 space-y-4 rounded-md w-full lg:w-5/12"
             >
               <div class="flex justify-between">
-                <p class="text-content">Pilih tujuan transfer:</p>
+                <p class="text-gift">Pilih tujuan transfer:</p>
                 <img src="images/bca.png" alt="" class="w-20" />
               </div>
               <select name="" id="" class="w-full p-2 border-2 rounded-sm">
@@ -830,7 +927,7 @@
               </select>
               <div>
                 <div class="flex items-center space-x-1">
-                  <p class="text-content">
+                  <p class="text-content2 text-black">
                     No. Rekening : <span class="font-bold"> 32523422</span>
                   </p>
                   <a href="#" class="w-6 border-2 rounded-md border-black p-1">
@@ -845,29 +942,31 @@
                     </svg>
                   </a>
                 </div>
-                <p class="font-poppins text-xs text-customDarkGrey">
-                  a/n Farrel Alamsyah
-                </p>
+                <p class="text-content2 text-black">a/n Farrel Alamsyah</p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Friend Wishes Section -->
-      <section id="friend-wishes">
-        <!-- Send Wishes Section -->
+      <!-- RSVP SECTION -->
+      <section id="rsvp">
+        <!-- Flex Section -->
         <div
           class="flex flex-col justify-center items-center space-y-8 px-5 py-16"
         >
-          <p class="text-content max-w-2xl">
-            Merupakan suatu kehormatan dan kebahagiaan bagi kami sekeluarga
-            apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memeriahkan acara
-            pernikahan kami, terima kasih.
-          </p>
-          <div class="space-y-4">
-            <h2>Will You Attend</h2>
-            <h4 class="text-customBrown">RSVP</h4>
+          <div
+            class="header flex flex-col justify-center items-center space-y-4"
+          >
+            <img
+              src="https://wedding.invie.my.id/assets/vendors/theme-four/img/decoration/foliage-horizontal-1.svg"
+              class="w-48"
+              alt=""
+            />
+            <h3 class="text-subheader">
+              Sejak kami bertemu dan memutuskan menikah
+            </h3>
+            <h2 class="text-header">RSVP</h2>
           </div>
           <!-- FORM -->
           <form
@@ -878,14 +977,10 @@
             <input
               type="text"
               placeholder="Nama lengkap"
-              class="p-4 px-4 w-full rounded-sm shadow-sm border"
+              class="input-custom"
             />
             <label for="kehadiran">Bersedia hadir di acara kami?</label>
-            <select
-              name=""
-              id=""
-              class="p-4 px-4 w-full rounded-sm shadow-sm border"
-            >
+            <select class="input-custom">
               <option selected disabled value="">Pilih salah satu</option>
               <option value="#">Akan Hadir</option>
               <option value="#">Berhalang Hadir</option>
@@ -895,10 +990,12 @@
             <input
               type="number"
               placeholder="Jumlah Tamu (isi 0 jika tidak hadir)"
-              class="p-4 px-4 w-full rounded-sm shadow-sm border"
+              class="input-custom"
             />
             <label for="ucapan">Kirim ucapan</label>
-            <textarea class="p-4 h-52 rounded-sm shadow-sm border"></textarea>
+            <textarea
+              class="p-4 h-52 rounded-sm shadow-sm border border-black"
+            ></textarea>
 
             <div class="flex justify-center items-center pt-3">
               <button class="btn-custom">Jawab Undangan</button>
@@ -906,38 +1003,35 @@
           </form>
         </div>
       </section>
-      <!-- FRIEND WISHES -->
 
-      <section aria-label="Ucapan Gallery">
+      <!--  WISH SECTION -->
+      <section id="wish" aria-label="wish-carousel">
+        <!-- Flex Section -->
         <div
           class="flex flex-col items-center justify-center text-center space-y-10"
         >
-          <!-- Header Text -->
-          <div class="space-y-3">
-            <h2>Friend Wishes</h2>
-            <h4 class="text-customBrown">Best Wishes</h4>
+          <!-- Header -->
+          <div class="flex flex-col justify-center items-center space-y-4">
+            <img
+              src="https://wedding.invie.my.id/assets/vendors/theme-four/img/decoration/foliage-horizontal-1.svg"
+              class="w-48"
+              alt=""
+            />
+            <h3 class="text-subheader">Best Wishes</h3>
+            <h2 class="text-header">Ucapan</h2>
           </div>
-          <!-- CAROUSEL -->
+          <!-- Carousel -->
           <div class="carousel">
             <!-- Carousel Item 1 -->
             <div class="carousel__item space-y-8">
               <!-- Flex Logo & Text -->
               <div class="flex flex-col items-center justify-center space-y-1">
                 <img src="images/avatar/male.png" alt="" class="w-24 pb-4" />
-                <div
-                  class="uppercase font-bold font-poppins text-sm tracking-widest text-black"
-                >
-                  Andi Yusuf
-                </div>
-                <div
-                  class="uppercase font-bold font-poppins text-sm tracking-widest text-black"
-                >
-                  Sahabat Mempelai Pria
-                </div>
+                <div class="title-wish">Andi Yusuf</div>
+                <div class="title-wish">Sahabat Mempelai Pria</div>
               </div>
-
               <div>
-                <p class="text-xl italic text-customDarkGrey max-w-md">
+                <p class="text-wish">
                   "Selamat ya Farrel & Fitri. Semoga menjadi keluarga yang
                   sakinnah mawaddah warrahmah. Selamat menempuh hidup baru!"
                 </p>
@@ -948,20 +1042,12 @@
               <!-- Flex Logo & Text -->
               <div class="flex flex-col items-center justify-center space-y-1">
                 <img src="images/avatar/female.png" alt="" class="w-24 pb-4" />
-                <div
-                  class="uppercase font-bold font-poppins text-sm tracking-widest text-black"
-                >
-                  Hilya Putri
-                </div>
-                <div
-                  class="uppercase font-bold font-poppins text-sm tracking-widest text-black"
-                >
-                  Sahabat Mempelai Wanita
-                </div>
+                <div class="title-wish">Hilya Putri</div>
+                <div class="title-wish">Sahabat Mempelai Wanita</div>
               </div>
 
               <div>
-                <p class="text-xl italic text-customDarkGrey max-w-md">
+                <p class="text-wish">
                   "Semoga menjadi keluarga yang sakinnah mawaddah warrahmah.
                   Congrats both of you!"
                 </p>
@@ -972,20 +1058,12 @@
               <!-- Flex Logo & Text -->
               <div class="flex flex-col items-center justify-center space-y-1">
                 <img src="images/avatar/female.png" alt="" class="w-24 pb-4" />
-                <div
-                  class="uppercase font-bold font-poppins text-sm tracking-widest text-black"
-                >
-                  Farcha Alkatiri
-                </div>
-                <div
-                  class="uppercase font-bold font-poppins text-sm tracking-widest text-black"
-                >
-                  Teman Kelas Mempelai Wanita
-                </div>
+                <div class="title-wish">Farcha Alkatiri</div>
+                <div class="title-wish">Teman Kelas Mempelai Wanita</div>
               </div>
 
               <div>
-                <p class="text-xl italic text-customDarkGrey max-w-md">
+                <p class="text-wish">
                   "Aku seneng banget, akhirnya kalian bisa sampai di titik ini.
                   Semoga kedepannya tetap dilancarkan ya, aamiin. Selamat!"
                 </p>
@@ -994,43 +1072,48 @@
           </div>
         </div>
       </section>
-
+      <!-- CLOSES SECTION -->
       <section id="closes">
-        <div class="container mx-auto py-44">
-          <div class="flex flex-col justify-center items-center space-y-8">
-            <div class="font-rochester text-4xl text-center">
+        <!-- Container Section -->
+        <div class="container mx-auto py-44 lg:py-48">
+          <!-- Flex Section -->
+          <div
+            class="flex flex-col justify-center items-center space-y-8 lg:space-y-12"
+          >
+            <!-- Content -->
+            <div class="font-rochester text-center text-4xl">
               Terimakasih atas doa restunya
             </div>
-            <h2>Farel & Fitri</h2>
+            <h2 class="font-rochester text-center text-3xl lg:text-5xl">
+              Farel & Fitri
+            </h2>
+            <!-- Image Decoration -->
             <img
               src="https://wedding.invie.my.id/assets/vendors/theme-three/img/decoration/closing.png"
-              class="w-56"
+              class="w-56 lg:w-60"
               alt=""
             />
           </div>
         </div>
       </section>
-
-      <footer class="bg-customBrown">
-        <!-- Container -->
-        <div class="px-2 py-5">
-          <!-- Footer Flex Container -->
+      <!-- FOOTER -->
+      <footer class="bg-customDarkGreen2">
+        <!-- Container Section -->
+        <div class="container mx-auto px-5 py-5">
+          <!-- Flex Section -->
           <div
-            class="flex flex-col justify-around space-y-4 lg:space-y-0 lg:flex-row"
+            class="flex flex-col justify-between space-y-4 lg:space-y-0 lg:flex-row"
           >
-            <!-- Text -->
-            <p class="text-white text-left">
+            <!-- Content -->
+            <p class="text-content2 text-white">
               © 2022 Invie ID. All Rights Reserved.
             </p>
-            <p class="text-white text-left">Made with &hearts; by Invie.id</p>
+            <p class="text-content2 text-white">
+              Made with &hearts; by Invie.id
+            </p>
           </div>
         </div>
       </footer>
     </div>
-
-    <!-- <h1 class="text-3xl font-bold underline">
-    Hello world!
-  </h1>
-  <img src="https://wedding.invie.my.id/assets/img/icons/wedding_ring.png" alt="invie_logo"> -->
   </body>
 </html>

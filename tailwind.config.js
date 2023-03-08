@@ -36,6 +36,10 @@ module.exports = {
         customGreen: "#7A9577",
         customBrown: "#6B6654",
         customDarkGrey: "#6C757D",
+        // New
+        customDarkGreen: "#3A4E3F",
+        customDarkGreen2: "#122617",
+        customGreen: "#BCB683",
       },
     },
   },
